@@ -27,7 +27,7 @@
           <br /> <br />
           Take a look at the
           <a
-            href="https://glitch.com/edit/#!/twb-data-source-mapper?path=script.js"
+            href="https://github.com/KeshiaRose/twb-data-source-mapper"
             target="_blank"
             >source code</a
           >
@@ -45,7 +45,7 @@
               >drop me a line</a
             >
             and let
-            <a href="https://twitter.com/KroseKeshia" target="_blank">me</a>
+            <a href="https://keshiarose.com" target="_blank">me</a>
             know! 🙂</b
           >
         </p>
@@ -88,7 +88,7 @@
             <p class="sheet" v-for="sheet in dataSource.sheets">
               <img
                 class="tabicon"
-                :src="'https://cdn.glitch.global/945b8f26-7039-4242-b7b8-583646c92829/' + sheet.type + '.png'"
+                :src="'/' + sheet.type + '.png'"
               />{{sheet.name}}
             </p>
           </div>
@@ -104,7 +104,7 @@
               <p :title="field.calc">
                 <img
                   class="tabicon"
-                  :src="'https://cdn.glitch.global/945b8f26-7039-4242-b7b8-583646c92829/' + field.type + '.png'"
+                  :src="'/' + field.type + '.png'"
                 />{{field.name}}
               </p>
               <span v-if="showSheets">
