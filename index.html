@@ -9,41 +9,53 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
     <script src="https://cdn.jsdelivr.net/gh/Stuk/jszip@master/dist/jszip.min.js"></script>
     <script src="./script.js" defer></script>
+    <style>
+      .banner-warning {
+        width: 100%;
+        background: #2563eb;
+        color: #fff;
+        text-align: center;
+        padding: 4px;
+      }
+    </style>
   </head>
 
   <body>
+    <div class="banner-warning">
+      Glitch no longer offers web hosting so I had to move this tool to my own domain. Please update
+      your bookmarks to the new URL hosted on
+      <a
+        href="https://tableau-data-source-mapper.sliceofkeesh.com/"
+        style="color: #fff; text-decoration: underline; font-weight: bold"
+        target="_blank"
+        rel="noopener"
+        >sliceofkeesh.com</a
+      >
+    </div>
     <section class="section" id="app">
       <div class="container">
         <h1 class="title has-text-centered">Tableau Data Source Mapper</h1>
         <p class="subtitle has-text-centered">
-          Add your Tableau workbook below to see how its data sources are being
-          used!
+          Add your Tableau workbook below to see how its data sources are being used!
         </p>
         <p class="subtitle is-size-7 has-text-centered">
-          This tool is safe to use with sensitive data. Nothing is being
-          transmitted and everything happens within your browser. You can even
-          turn off your wifi/internet after loading this page and it will still
-          work.
-          <br /> <br />
+          This tool is safe to use with sensitive data. Nothing is being transmitted and everything
+          happens within your browser. You can even turn off your wifi/internet after loading this
+          page and it will still work.
+          <br />
+          <br />
           Take a look at the
-          <a
-            href="https://github.com/KeshiaRose/twb-data-source-mapper"
-            target="_blank"
+          <a href="https://github.com/KeshiaRose/twb-data-source-mapper" target="_blank"
             >source code</a
           >
-          or read my
-          <a
-            href="https://sliceofkeesh.com/post/tableau-data-source-mapper"
-            target="_blank"
+          to build your own local version or read my
+          <a href="https://sliceofkeesh.com/post/tableau-data-source-mapper" target="_blank"
             >blog post</a
           >
           to learn more. <br /><br />
           <b
-            >Found this useful? I don't collect any data on this page, even
-            analytics, so
-            <a href="mailto:keshia@sliceofkeesh.com" target="_blank"
-              >drop me a line</a
-            >
+            >Found this useful? I don't collect any data on this page, even analytics, so
+            <a href="mailto:keshia@sliceofkeesh.com" target="_blank">drop me a line</a>
             and let
             <a href="https://keshiarose.com" target="_blank">me</a>
             know! 🙂</b
@@ -86,10 +98,7 @@
           <div class="block" v-for="dataSource in sheetMap">
             <p class="dataSource">{{dataSource.dsName}}</p>
             <p class="sheet" v-for="sheet in dataSource.sheets">
-              <img
-                class="tabicon"
-                :src="'/' + sheet.type + '.png'"
-              />{{sheet.name}}
+              <img class="tabicon" :src="'/' + sheet.type + '.png'" />{{sheet.name}}
             </p>
           </div>
         </div>
@@ -102,10 +111,7 @@
             <p class="dataSource">{{dataSource.dsName}}</p>
             <div class="sheet" v-for="field in dataSource.fields">
               <p :title="field.calc">
-                <img
-                  class="tabicon"
-                  :src="'/' + field.type + '.png'"
-                />{{field.name}}
+                <img class="tabicon" :src="'/' + field.type + '.png'" />{{field.name}}
               </p>
               <span v-if="showSheets">
                 <p class="fieldSheet" v-for="ws in field.worksheets">{{ws}}</p>
